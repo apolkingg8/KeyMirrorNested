@@ -1,0 +1,17 @@
+{
+  "name": "KeyMirrorDeep",
+  "version": "1.0.0",
+  "description": "Tiny helper to creat const object. Mirror key path to value.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "keyMirror",
+    "key",
+    "mirror",
+    "bread crumbs"
+  ],
+  "author": "apolkingg8",
+  "license": "MIT"
+}
