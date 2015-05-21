@@ -1,7 +1,7 @@
 {
-  "name": "KeyMirrorDeep",
+  "name": "keyMirrorNested",
   "version": "1.0.0",
-  "description": "Tiny helper to creat const object. Mirror key path to value.",
+  "description": "Tiny Helper to create const in js, just like react/lib/keyMirror, but support nested objects.",
   "main": "index.js",
   "scripts": {
     "test": "node test"
@@ -10,8 +10,20 @@
     "keyMirror",
     "key",
     "mirror",
+    "nested",
+    "react",
+    "flux",
     "bread crumbs"
   ],
-  "author": "apolkingg8",
-  "license": "MIT"
+  "homepage": "https://github.com/apolkingg8/KeyMirrorNested",
+  "bugs": "https://github.com/apolkingg8/KeyMirrorNested/issues",
+  "author": {
+    "name" : "apolkingg8",
+    "email" : "apolkingg8@gmail.com",
+    "url" : "http://apolkingg8.github.io/"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/mit-license.php"
+  }
 }
