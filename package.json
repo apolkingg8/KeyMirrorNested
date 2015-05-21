@@ -1,5 +1,5 @@
 {
-  "name": "keyMirrorNested",
+  "name": "key-mirror-nested",
   "version": "1.0.0",
   "description": "Tiny Helper to create const in js, just like react/lib/keyMirror, but support nested objects.",
   "main": "index.js",
