@@ -6,13 +6,24 @@ var DUMMY_CONST = {
             SUCCESS: null,
             ERROR: undefined
         },
-        SOME_OTHER_ACTION: ''
+        ACTIONB: ''
     },
     EVENTS: {
         A: 123,
         B: 456
     },
-    SOME_OTHER: 789
+    SOMEOTHER: 789
 };
 
-console.log(keyMirrorDeep(DUMMY_CONST));
+console.log(keyMirrorDeep(DUMMY_CONST, {
+    connChar: '_',
+    custFunc: function(oldVal, newVal) {
+
+        // you can do something with const val here
+        if(typeof(oldVal) === "number") {
+            newVal = newVal + '_' + oldVal
+        }
+
+        return newVal;
+    }
+}));

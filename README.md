@@ -8,10 +8,26 @@ Tiny Helper to create const in js, just like react/lib/keyMirror, but support ne
 ```js
 var keyMirror = require('key-mirror-nested');
 
+var options = {
+    connChar: '.',
+    // connect char, default use '.'
+    custFunc: function(oldVal, newVal) {
+        return newVal;
+    }
+    // cust const val before replace
+};
+
+var OUTPUT_OBJ = keyMirror(inputObj, options);
+```
+
+##Example
+```js
+var keyMirror = require('key-mirror-nested');
+
 var DUMMY_CONST = {
     ACTIONS: {
         LOGIN: {
-            SUCCESS: null, // you can set any value, however they will be replaced.
+            SUCCESS: null, 
             ERROR: undefined
         },
         SOME_OTHER_ACTION: ''
@@ -42,6 +58,58 @@ console.log(keyMirrorDeep(DUMMY_CONST));
 }
 */
 ```
+with options:
+```js
+var keyMirror = require('key-mirror-nested');
+
+var DUMMY_CONST = {
+    ACTIONS: {
+        LOGIN: {
+            SUCCESS: null,
+            ERROR: undefined
+        },
+        ACTIONB: ''
+    },
+    EVENTS: {
+        A: 123,
+        B: 456
+    },
+    SOMEOTHER: 789
+};
+
+console.log(keyMirrorDeep(DUMMY_CONST, {
+    connChar: '_',
+    custFunc: function(oldVal, newVal) {
+
+        // you can do something with const val here
+        if(typeof(oldVal) === "number") {
+            newVal = newVal + '_' + oldVal
+        }
+
+        return newVal;
+    }
+}));
+
+/*
+=>
+{ 
+    ACTIONS: { 
+        LOGIN: { 
+            SUCCESS: 'ACTIONS_LOGIN_SUCCESS',
+            ERROR: 'ACTIONS_LOGIN_ERROR' 
+        },
+        ACTIONB: 'ACTIONS_ACTIONB' 
+    },
+    EVENTS: { 
+        A: 'EVENTS_A_123', 
+        B: 'EVENTS_B_456' 
+    },
+    SOMEOTHER: 'SOMEOTHER_789' 
+}
+*/
+
+```
+
 
 ##License
 [MIT](http://www.opensource.org/licenses/mit-license.php)

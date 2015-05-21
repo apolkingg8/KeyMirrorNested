@@ -1,20 +1,45 @@
-var objToKeyPath = function(obj, path) {
+
+var isObj = function(input) {
+    return ((typeof(input) === "object") && (input !== null))
+};
+
+var objToKeyPath = function(obj, path, connChar, custFunc) {
+
     for (var key in obj) {
+
         if (obj.hasOwnProperty(key)) {
-            if (typeof(obj[key]) === "object" && obj[key] !== null) {
-                objToKeyPath(obj[key], path + (path ? '.' : '') + key);
+
+            if (isObj(obj[key])) {
+                objToKeyPath(obj[key], path + (path ? connChar : '') + key, connChar, custFunc);
             } else {
-                obj[key] = (path + '.' + key).replace(/^\.+/, '')
+                obj[key] = custFunc(obj[key], path + (path ? connChar : '') + key)
             }
         }
     }
 };
 
-var keyMirrorDeep = function(obj) {
-    if(!(obj instanceof Object) || (Array.isArray(obj))) {
+var keyMirrorDeep = function(obj, opt) {
+
+    if(!isObj(obj)) {
         throw new Error('keyMirrorDeep(...): Argument must be an object.');
     } else {
-        objToKeyPath(obj, '');
+        var connChar = '.';
+        var custFunc = function(oldVal, newVal) {
+            return newVal;
+        };
+
+        if(isObj(opt)) {
+
+            if((typeof(opt['connChar']) === "string") && (opt['connChar'].length > 0)) {
+                connChar = opt['connChar'];
+            }
+
+            if(typeof(opt['custFunc']) === "function") {
+                custFunc = opt['custFunc'];
+            }
+        }
+
+        objToKeyPath(obj, '', connChar, custFunc);
     }
 
     return obj
