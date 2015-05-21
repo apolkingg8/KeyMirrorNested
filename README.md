@@ -1,5 +1,5 @@
 #Key Mirror Nested
-Tiny helper to create const in js, just like react/lib/keyMirror, but support nested object and more features
+Tiny helper to create const in js, just like react/lib/keyMirror, but support nested object and more features.
 
 ##Install
 `npm install key-mirror-nested --save-dev`
