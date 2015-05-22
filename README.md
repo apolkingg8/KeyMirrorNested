@@ -1,14 +1,14 @@
-#Key Mirror Nested
+# Key Mirror Nested
 
 Tiny helper to create const in js, just like react/lib/keyMirror, but support nested object and more features.
 
-###Install
+## Install
 
 `npm install key-mirror-nested --save-dev`
 
-###Usage
+## Usage
 
-```js
+``` js
 var keyMirror = require('key-mirror-nested');
 
 var options = {
@@ -23,9 +23,9 @@ var options = {
 var OUTPUT_OBJ = keyMirror(inputObj, options);
 ```
 
-###Example
+## Example
 
-```js
+``` js
 var keyMirror = require('key-mirror-nested');
 
 var DUMMY_CONST = {
@@ -63,7 +63,7 @@ console.log(keyMirrorDeep(DUMMY_CONST));
 */
 ```
 with options:
-```js
+``` js
 var keyMirror = require('key-mirror-nested');
 
 var DUMMY_CONST = {
@@ -115,7 +115,7 @@ console.log(keyMirrorDeep(DUMMY_CONST, {
 ```
 
 
-###License
+## License
 
 [MIT](http://www.opensource.org/licenses/mit-license.php)
 
