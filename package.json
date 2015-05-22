@@ -1,7 +1,7 @@
 {
   "name": "key-mirror-nested",
-  "version": "1.2.0",
-  "description": "Tiny Helper to create const in js, just like react/lib/keyMirror, but support nested object and more features.",
+  "version": "1.2.2",
+  "description": "Tiny helper to create const in js, just like react/lib/keyMirror, but support nested object and more features.",
   "main": "index.js",
   "scripts": {
     "test": "node test"
@@ -15,6 +15,10 @@
     "flux",
     "bread crumbs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apolkingg8/KeyMirrorNested.git"
+  },
   "homepage": "https://github.com/apolkingg8/KeyMirrorNested",
   "bugs": "https://github.com/apolkingg8/KeyMirrorNested/issues",
   "author": {
