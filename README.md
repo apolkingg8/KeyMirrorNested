@@ -1,3 +1,5 @@
+[![NPM](https://nodei.co/npm-dl/key-mirror-nested.png?months=1)](https://nodei.co/npm-dl/key-mirror-nested.png?months=9)
+
 # Key Mirror Nested
 
 Tiny helper to create const in js, just like react/lib/keyMirror, but support nested object and more features.
