@@ -1,6 +1,7 @@
 
-var isObj = function(input) {
-    return ((typeof(input) === "object") && (input !== null))
+var isObj = function(value) {
+    var type = typeof value;
+    return !!value && (type == 'object') && !(value instanceof Array)
 };
 
 var objToKeyPath = function(obj, path, connChar, custFunc) {

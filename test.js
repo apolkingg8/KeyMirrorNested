@@ -6,7 +6,7 @@ var DUMMY_CONST = {
             SUCCESS: null,
             ERROR: undefined
         },
-        ACTIONB: ''
+        ACTIONB: [1,2,'ghj']
     },
     EVENTS: {
         A: 123,
