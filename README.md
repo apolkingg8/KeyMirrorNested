@@ -121,5 +121,3 @@ console.log(keyMirrorDeep(DUMMY_CONST, {
 
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/apolkingg8/keymirrornested/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
