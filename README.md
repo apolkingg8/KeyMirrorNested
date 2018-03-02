@@ -4,7 +4,7 @@ Tiny helper to create const in js, just like react/lib/keyMirror, but support ne
 
 ## Install
 
-`npm install key-mirror-nested --save-dev`
+`npm install key-mirror-nested --save`
 
 ## Usage
 
@@ -43,7 +43,7 @@ var DUMMY_CONST = {
     SOME_OTHER: 789
 };
 
-console.log(keyMirrorDeep(DUMMY_CONST));
+console.log(keyMirror(DUMMY_CONST));
 /*
 =>
 { 
@@ -81,7 +81,7 @@ var DUMMY_CONST = {
     SOMEOTHER: 789
 };
 
-console.log(keyMirrorDeep(DUMMY_CONST, {
+console.log(keyMirror(DUMMY_CONST, {
     connChar: '_',
     custFunc: function(oldVal, newVal) {
 

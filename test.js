@@ -15,7 +15,7 @@ var DUMMY_CONST = {
     SOMEOTHER: 789
 };
 
-console.log(keyMirrorDeep(DUMMY_CONST, {
+var res = keyMirrorDeep(DUMMY_CONST, {
     connChar: '_',
     custFunc: function(oldVal, newVal) {
 
@@ -26,4 +26,7 @@ console.log(keyMirrorDeep(DUMMY_CONST, {
 
         return newVal;
     }
-}));
+})
+
+console.log(DUMMY_CONST);
+console.log(res);

@@ -1,7 +1,16 @@
 
+var clone = function(c, obj) {
+
+    for(var i in obj) {
+        c[i] = (typeof obj[i] === "object" && obj[i] !== null) ? clone(obj[i].constructor(), obj[i]) : obj[i]
+    }
+
+    return c;
+}
+
 var isObj = function(value) {
     var type = typeof value;
-    return !!value && (type == 'object') && !(value instanceof Array)
+    return !!value && (type === 'object') && !(value instanceof Array)
 };
 
 var objToKeyPath = function(obj, path, connChar, custFunc) {
@@ -11,7 +20,7 @@ var objToKeyPath = function(obj, path, connChar, custFunc) {
         if (obj.hasOwnProperty(key)) {
 
             if (isObj(obj[key])) {
-                objToKeyPath(obj[key], path + (path ? connChar : '') + key, connChar, custFunc);
+                objToKeyPath(obj[key], path + (path ? connChar : '') + key, connChar, custFunc)
             } else {
                 obj[key] = custFunc(obj[key], path + (path ? connChar : '') + key)
             }
@@ -22,8 +31,9 @@ var objToKeyPath = function(obj, path, connChar, custFunc) {
 var keyMirrorDeep = function(obj, opt) {
 
     if(!isObj(obj)) {
-        throw new Error('keyMirrorDeep(...): Argument must be an object.');
+        throw new Error('keyMirrorDeep(...): Argument must be an object.')
     } else {
+        var res = clone({}, obj)
         var connChar = '.';
         var custFunc = function(oldVal, newVal) {
             return newVal;
@@ -40,10 +50,10 @@ var keyMirrorDeep = function(obj, opt) {
             }
         }
 
-        objToKeyPath(obj, '', connChar, custFunc);
+        objToKeyPath(res, '', connChar, custFunc)
     }
 
-    return obj
+    return res
 };
 
 module.exports = keyMirrorDeep;
